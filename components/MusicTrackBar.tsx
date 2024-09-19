@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface YouTubeMusicBarProps {
   videoId: string;
@@ -10,6 +11,7 @@ interface YouTubeMusicBarProps {
 declare global {
   interface Window {
     YT: {
+      [x: string]: any;
       Player: new (elementId: string, options: any) => any;
     };
     onYouTubeIframeAPIReady: () => void;
